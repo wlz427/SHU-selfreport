@@ -10,7 +10,7 @@ from fstate_generator import generate_fstate_day, generate_fstate_halfday, get_l
 from login import login
 
 NEED_BEFORE = False  # 如需补报则置为True，否则False
-START_DT = dt.datetime(2021, 4, 20)  # 需要补报的起始日期
+START_DT = dt.datetime(2021, 6, 25)  # 需要补报的起始日期
 RETRY = 5
 RETRY_TIMEOUT = 120
 
