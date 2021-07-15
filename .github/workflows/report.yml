@@ -23,4 +23,5 @@ jobs:
       - name: Report
         env:
           users: ${{ secrets.USERS }}
+          email_key: ${{ secrets.EMAIL_KEY }}
         run: "python -u main.py"
