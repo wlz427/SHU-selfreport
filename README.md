@@ -77,11 +77,15 @@ crontab -e
 
 ![](images/secrets.png)
 
-4. 定位到你仓库下的 `Actions` 选项卡，点击 `Enable workflow`
+4. 新增了发送邮件的功能，报送完自动发送结果到邮箱。添加secret：
+`NAME` 设置为 `EMAIL_KEY`
+`VALUE` 设置为 `发送邮件邮箱地址,邮箱密码,收件人邮箱地址,邮箱服务器`的格式。(注意：该密码不是自己设置的密码，而是邮箱网页开启pop/smtp服务时的16位授权码) 
+
+5. 定位到你仓库下的 `Actions` 选项卡，点击 `Enable workflow`
 
 ![](images/enable_actions.png)
 
-5. 此时Actions 已经启动完成，每天上午八点（UTC+8）和晚上八点各执行一次，每执行一次会在 `Actions` 选项卡下生成一个报告。
+6. 此时Actions 已经启动完成，每天上午八点（UTC+8）和晚上八点各执行一次，每执行一次会在 `Actions` 选项卡下生成一个报告。
 
    如果需要对报送功能进行测试，可以点击 `run workflow` 按钮，立即进行一次运行。
 
