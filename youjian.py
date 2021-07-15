@@ -9,9 +9,12 @@ def _format_addr(s):
     return formataddr((Header(name, 'utf-8').encode(), addr))
 
 def send_email(inf):
-    if 'EMAIL_KEY' in os.environ:
+    print('列出os.environ:')
+    print(os.environ)
+    if 'email_key' in os.environ:
+        print('youjian.py可以找到email_key')
         try:
-            from_addr,email_password,to_addr,smtp_server = os.environ['EMAIL_KEY'].split(',')
+            from_addr,email_password,to_addr,smtp_server = os.environ['email_key'].split(',')
             msg = MIMEText(inf, 'plain', 'utf-8')
             msg['From'] = _format_addr('德玛西亚 <%s>' % from_addr)
             msg['To'] = _format_addr('艾欧尼亚 <%s>' % to_addr)

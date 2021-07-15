@@ -192,6 +192,8 @@ if __name__ == "__main__":
             if report_day(sess, now):
                 print(f'{now} 每日一报提交成功')
                 inf = '每日一报提交成功'
+                if 'email_key' in os.environ:
+                    print('main.py可以找到email_key')
                 send_email(inf)
             else:
                 print(f'{now} 每日一报提交失败')
