@@ -9,6 +9,8 @@ from bs4 import BeautifulSoup
 from fstate_generator import generate_fstate_day, generate_fstate_halfday, get_last_report
 from login import login
 
+from youjian import send_email
+
 NEED_BEFORE = False  # 如需补报则置为True，否则False
 START_DT = dt.datetime(2021, 6, 25)  # 需要补报的起始日期
 RETRY = 5
@@ -189,8 +191,12 @@ if __name__ == "__main__":
             now = get_time()
             if report_day(sess, now):
                 print(f'{now} 每日一报提交成功')
+                inf = '每日一报提交成功'
+                send_email(inf)
             else:
                 print(f'{now} 每日一报提交失败')
+                inf = '每日一报提交失败'
+                send_email(inf)
         else:
             print('登录失败')
 
